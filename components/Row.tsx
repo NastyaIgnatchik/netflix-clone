@@ -8,7 +8,7 @@ import { DocumentData } from "firebase/firestore";
 
 interface Props {
   title: string;
-  movies: Movie[] | DocumentData[];
+  movies: Movie[] | DocumentData[] | any;
   id: string;
 }
 const Row = ({ title, movies, id }: Props) => {
@@ -45,7 +45,7 @@ const Row = ({ title, movies, id }: Props) => {
           ref={rowRef}
           className="flex items-center space-x-0.5 overflow-x-scroll md:space-x-2.5 md:p-2 scrollbar-hide"
         >
-          {movies.map((movie: Movie) => {
+          {movies.map((movie: Movie | any) => {
             return <Thumbnail key={movie.id} movie={movie} />;
           })}
         </div>
