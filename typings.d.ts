@@ -22,4 +22,12 @@ export interface Movie {
   vote_count: number;
 }
 
-
+export interface Element {
+  type:
+      | 'Bloopers'
+      | 'Featurette'
+      | 'Behind the Scenes'
+      | 'Clip'
+      | 'Trailer'
+      | 'Teaser'
+}
