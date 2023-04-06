@@ -64,7 +64,7 @@ const Plans = ({ products }: Product[]) => {
         </ul>
         <div className="mt-4 flex flex-col space-y-4">
           <div className="flex w-full items-center md:w-3/5 self-end">
-            {products.map((product: Product) => {
+            {products.map((product: Product | any) => {
               return (
                 <div
                   key={product.id}
