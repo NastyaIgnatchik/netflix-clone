@@ -31,7 +31,7 @@ const Modal = () => {
   const [isMuted, setIsMuted] = useState<boolean>(false);
   const [addedToList, setAddedToList] = useState<boolean>(false);
   const { user } = UseAuth();
-  const [list, setList] = useState<Movie | DocumentData>([]);
+  const [list, setList] = useState<Movie | DocumentData | any>([]);
 
   const toastStyle = {
     background: "white",
