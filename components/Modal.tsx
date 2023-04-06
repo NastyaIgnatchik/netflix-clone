@@ -102,7 +102,7 @@ const Modal = () => {
       ).then((response) => response.json());
       if (data?.videos) {
         const index = data.videos.results.findIndex(
-          (element: Element) => element.type === "Trailer"
+          (element) => element.type === "Trailer"
         );
         setTrailer(data.videos?.results[index]?.key);
       }

@@ -9,7 +9,7 @@ import { DocumentData } from "firebase/firestore";
 interface Props {
   title: string;
   movies: Movie[] | DocumentData[];
-  id: string;
+  id?: string;
 }
 const Row = ({ title, movies, id }: Props) => {
   const rowRef = useRef<HTMLDivElement>(null);
