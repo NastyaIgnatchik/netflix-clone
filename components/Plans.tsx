@@ -11,11 +11,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { Box } from "@mui/material";
 import { session } from "../lib/stripe";
 
-interface Props{
-  products:Product[];
-}
-
-const Plans = ({ products }: Props) => {
+const Plans = ({ products }: Product[]) => {
   const { logout, user } = UseAuth();
   const [selectedPlan, setSelectedPlan] = useState<Product | null>(products[2]);
   const [isBillingLoading, setIsBillingLoading] = useState<boolean>(false);
