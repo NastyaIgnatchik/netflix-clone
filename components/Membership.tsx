@@ -26,7 +26,7 @@ const Membership = () => {
         >
           {isBillingLoading ? (
             <CircularProgress
-              size
+
               sx={{ color: "gray", width: "30px", height: "30px" }}
             />
           ) : (
