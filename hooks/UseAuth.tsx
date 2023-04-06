@@ -1,9 +1,4 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -54,7 +49,8 @@ export const AuthProvider = ({ children }: React.ReactNode) => {
         setIsLoading(false);
       } else {
         setUser(null);
-        setIsLoading(true);
+        setIsLoading(false);
+
         router.push("/login");
       }
       setInitialLoading(false);
