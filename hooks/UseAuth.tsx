@@ -26,7 +26,11 @@ const AuthContext = createContext<IAuth>({
   isLoading: false,
 });
 
-export const AuthProvider = ({ children }: React.ReactNode) => {
+interface Props{
+  children: React.ReactNode;
+}
+
+export const AuthProvider = ({ children }: Props) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [initialLoading, setInitialLoading] = useState<boolean>(true);
   const [user, setUser] = useState<User | null>(null);

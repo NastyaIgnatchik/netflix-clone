@@ -14,7 +14,11 @@ import {
 import payments from "../lib/stripe";
 import Membership from "../components/Membership";
 
-const Account = ({ products }: Product[]) => {
+interface Props{
+  products: Product[];
+}
+
+const Account = ({ products }: Props) => {
   const { user,logout } = UseAuth();
   const subscription = UseSubscription(user);
 

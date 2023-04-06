@@ -4,9 +4,13 @@ import Image from "next/image";
 import { baseUrl } from "../constans/movie";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { useRecoilState } from "recoil";
-import { modalState, movieState } from "../atoms/modalAtom"
+import { modalState, movieState } from "../atoms/modalAtom";
 
-const Banner = ({ netflixOriginals }: any) => {
+interface Props {
+  netflixOriginals: Movie[];
+}
+
+const Banner = ({ netflixOriginals }: Props) => {
   const [movie, setMovie] = useState<Movie | null>(null);
   const [showModal, setShowModal] = useRecoilState(modalState);
   const [currentMovie, setCurrentMovie] = useRecoilState(movieState);

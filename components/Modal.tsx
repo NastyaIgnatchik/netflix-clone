@@ -3,7 +3,7 @@ import MuiModal from "@mui/material/Modal";
 import {useRecoilState, useRecoilValue} from "recoil";
 import { modalState, movieState } from "../atoms/modalAtom";
 import CloseIcon from "@mui/icons-material/Close";
-import Element, { Genre, Movie } from "../typings";
+import { Genre, Movie } from "../typings";
 import ReactPlayer from "react-player/lazy";
 import PlayArrowRoundedIcon from "@mui/icons-material/PlayArrowRounded";
 import AddIcon from "@mui/icons-material/Add";
@@ -31,7 +31,7 @@ const Modal = () => {
   const [isMuted, setIsMuted] = useState<boolean>(false);
   const [addedToList, setAddedToList] = useState<boolean>(false);
   const { user } = UseAuth();
-  const [list, setList] = useState<Movie | DocumentData | any>([]);
+  const [list, setList] = useState<Movie[] | DocumentData[]>([]);
 
   const toastStyle = {
     background: "white",
@@ -86,7 +86,7 @@ const Modal = () => {
 
   useEffect(() => {
     setAddedToList(
-      list.findIndex((result) => result.data().id == movie.id) !== -1
+      list.findIndex((result:any) => result.data().id == movie.id) !== -1
     );
   }, [list]);
 
@@ -102,7 +102,7 @@ const Modal = () => {
       ).then((response) => response.json());
       if (data?.videos) {
         const index = data.videos.results.findIndex(
-          (element: Element) => element.type === "Trailer"
+          (element) => element.type === "Trailer"
         );
         setTrailer(data.videos?.results[index]?.key);
       }

@@ -4,7 +4,11 @@ import Image from "next/image";
 import { useRecoilState } from "recoil";
 import { modalState, movieState } from "../atoms/modalAtom";
 
-const Thumbnail = ({ movie }: Movie) => {
+interface Props{
+    movie: Movie;
+}
+
+const Thumbnail = ({ movie }:Props) => {
   const [currentMovie, setCurrentMovie] = useRecoilState(movieState);
   const [showModal, setShowModal] = useRecoilState(modalState);
   return (
